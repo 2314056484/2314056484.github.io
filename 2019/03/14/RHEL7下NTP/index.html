@@ -88,12 +88,12 @@
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="NTP(Network Time Protocol) 网络时间协议，是用来使计算机时间同步化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正（LAN上与标准间差小于1毫秒，WAN上几十毫秒），且可介由加密确认的方式来防止恶毒的协议攻击。时间按NTP服务器的等级传播。按照离外部UTC源的远近把所有服务器归入不同的Stratum（层）中。 开始">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="HTTPS://S2.AX1X.COM/2019/03/22/a89QXs.TH.PNG">
-<meta property="og:updated_time" content="2019-03-22T07:21:51.516Z">
+<meta property="og:image" content="https://s1.51cto.com/images/blog/201903/22/90b8421b9b2257b598cd6ac9983c357b.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:updated_time" content="2019-03-22T07:26:39.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RHEL7下NTP">
 <meta name="twitter:description" content="NTP(Network Time Protocol) 网络时间协议，是用来使计算机时间同步化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正（LAN上与标准间差小于1毫秒，WAN上几十毫秒），且可介由加密确认的方式来防止恶毒的协议攻击。时间按NTP服务器的等级传播。按照离外部UTC源的远近把所有服务器归入不同的Stratum（层）中。 开始">
-<meta name="twitter:image" content="HTTPS://S2.AX1X.COM/2019/03/22/a89QXs.TH.PNG">
+<meta name="twitter:image" content="https://s1.51cto.com/images/blog/201903/22/90b8421b9b2257b598cd6ac9983c357b.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
 
 
 
@@ -397,7 +397,7 @@
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>在配置文件/etc/ntp.conf中修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">restrict 10.0.0.0 mask 255.0.0.0 nomodify notra</span><br><span class="line">授权10.0.0.0网段上的所有机器可以从这台机器上查询和同步时间.</span><br><span class="line">#Please consider joining the pool (http://www.pool.ntp.org/join.html).</span><br><span class="line">#server 0.rhel.pool.ntp.org iburst</span><br><span class="line">#server 1.rhel.pool.ntp.org iburst</span><br><span class="line">#server 2.rhel.pool.ntp.org iburst</span><br><span class="line">#server 3.rhel.pool.ntp.org iburst</span><br><span class="line">如果ntp服务器无法联网，可以把从外网同步时间注释掉。</span><br><span class="line"></span><br><span class="line">server  127.127.1.0     # local clock  </span><br><span class="line">fudge   127.127.1.0 stratum 10</span><br><span class="line">当外部时间不可用时，使用本地时间.</span><br></pre></td></tr></table></figure></p>
 <h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# systemctl start ntpd.service</span><br></pre></td></tr></table></figure>
 <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> [root@localhost ~]# date </span><br><span class="line">2019年 03月 14日 星期四 01:11:01 CST</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
-<p><a href="HTTPS://IMGCHR.COM/I/a89QXs" target="_blank" rel="noopener"><img src="HTTPS://S2.AX1X.COM/2019/03/22/a89QXs.TH.PNG" alt="a89QXs.TH.PNG"></a></p>
+<p><img src="https://s1.51cto.com/images/blog/201903/22/90b8421b9b2257b598cd6ac9983c357b.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
 
       
     </div>
