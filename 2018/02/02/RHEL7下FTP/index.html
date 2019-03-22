@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Han&#39;s Blog">
 <meta property="og:description" content="FTP 是File Transfer Protocol（文件传输协议）的英文简称，而中文简称为“文传协议”。我们这次使用的是VSFTP。vsftpd是 “very secure FTP deamon”的缩写,是一个完全免费,开源的ftp服务器软件。 特点 小巧轻快,安全易用,支持虚拟用户、支持带宽限制等功能。 工作方式 主动模式：客户端从一个任意的非特权端口N（N&amp;gt;1024）连接到FTP服务">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T01:52:27.067Z">
+<meta property="og:updated_time" content="2019-03-22T06:44:00.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RHEL7下FTP">
 <meta name="twitter:description" content="FTP 是File Transfer Protocol（文件传输协议）的英文简称，而中文简称为“文传协议”。我们这次使用的是VSFTP。vsftpd是 “very secure FTP deamon”的缩写,是一个完全免费,开源的ftp服务器软件。 特点 小巧轻快,安全易用,支持虚拟用户、支持带宽限制等功能。 工作方式 主动模式：客户端从一个任意的非特权端口N（N&amp;gt;1024）连接到FTP服务">
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,648字
+                  1,774字
                 </span>
               
 
@@ -393,8 +393,9 @@
 <p>主动模式：客户端从一个任意的非特权端口N（N&gt;1024）连接到FTP服务器的命令端口，也就是21端口。然后客户端开始 监听端口N+1，并发送FTP命令“port N+1”到FTP服务器。接着服务器会从它自己的数据端口（20）连接到客户端指定的数据端口（N+1）。<br>    被动模式：当开启一个 FTP连接时，客户端打开两个任意的非特权本地端口（N &gt; 1024和N+1）。第一个端口连接服务器的21端口，但与主动方式的FTP不同，客户端不会提交PORT命令并允许服务器来回连它的数据端口，而是提交 PASV命令。这样做的结果是服务器会开启一个任意的非特权端口（P &gt; 1024），并发送PORT P命令给客户端。然后客户端发起从本地端口N+1到服务器的端口P的连接用来传送数据。</p>
 </blockquote>
 <h1 id="vsftp三种认证模式"><a href="#vsftp三种认证模式" class="headerlink" title="vsftp三种认证模式"></a>vsftp三种认证模式</h1><blockquote>
-<p>annoymous  匿名用户       #无虚输入密码即可访问<br>local user    真实用户      #服务器上存在的用户<br>guest user  虚拟用户        #映射到ftp服务器的用户 </p>
+<p>annoymous  匿名用户       #无虚输入密码即可访问<br>local user     真实用户      #服务器上存在的用户<br>guest user  虚拟用户        #映射到ftp服务器的用户 </p>
 </blockquote>
+<p>开始之前先把firewalld和selinux关闭<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# systemctl stop firewalld.service</span><br><span class="line">[root@localhost ~]# setenforce 0   #临时关闭selinux 立即生效</span><br><span class="line">[root@localhost ~]# vim /etc/selinux/config</span><br><span class="line"># This file controls the state of SELinux on the system.</span><br><span class="line"># SELINUX= can take one of these three values:</span><br><span class="line">#     enforcing - SELinux security policy is enforced.</span><br><span class="line">#     permissive - SELinux prints warnings instead of enforcing.</span><br><span class="line">#     disabled - No SELinux policy is loaded.</span><br><span class="line">SELINUX=disabled   #永久关闭 重启生效</span><br><span class="line"># SELINUXTYPE= can take one of these two values:</span><br><span class="line">#     targeted - Targeted processes are protected,</span><br><span class="line">#     minimum - Modification of targeted policy. Only selected processes are protected. </span><br><span class="line">#     mls - Multi Level Security protection.</span><br><span class="line">SELINUXTYPE=targeted</span><br></pre></td></tr></table></figure></p>
 <p>配置源的部分就不说了</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> [root@localhost ~]# yum install vsftpd -y</span><br><span class="line">已加载插件：langpacks, product-id, subscription-manager</span><br><span class="line">This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.</span><br><span class="line">正在解决依赖关系</span><br><span class="line">--&gt; 正在检查事务</span><br><span class="line">---&gt; 软件包 vsftpd.x86_64.0.3.0.2-9.el7 将被 安装</span><br><span class="line">--&gt; 解决依赖关系完成</span><br><span class="line"></span><br><span class="line">----------------省略部分----------------</span><br><span class="line">已安装:</span><br><span class="line">  vsftpd.x86_64 0:3.0.2-9.el7                                                                                                           </span><br><span class="line"></span><br><span class="line">完毕！</span><br></pre></td></tr></table></figure>
 <h1 id="匿名用户"><a href="#匿名用户" class="headerlink" title="匿名用户"></a>匿名用户</h1><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>在配置文件/etc/vsftpd/vsftpd.conf中修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable=YES				开启匿名用户登录</span><br><span class="line">anon_root=/var/ftp/pub				设置匿名用户登录目录</span><br><span class="line">anon_upload_enable=YES				允许匿名用户上传文件</span><br></pre></td></tr></table></figure></p>
@@ -722,7 +723,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">blog全站共8.7k个字</span>
+  <span class="post-count">blog全站共8.8k个字</span>
 </div>
 
         
