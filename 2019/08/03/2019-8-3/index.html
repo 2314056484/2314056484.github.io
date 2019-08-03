@@ -80,13 +80,13 @@
 
 
 
-<meta name="description" content="背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。结果发现登不上？？？不行 我的路由器我做主网上找了半天的同型号路由器密码发现不同地区的密码不一样 不过还是找到了正确的密码登陆上来了这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？附近有好几个运营商常见前">
+<meta name="description" content="背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。 结果发现登不上？？？ 不行 我的路由器我做主 网上找了半天的同型号路由器密码 发现不同地区的密码不一样 不过还是找到了正确的密码 登陆上来了 这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？ 附近有好几">
 <meta name="keywords" content="内网渗透">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次歪打正着的破解WIFI密码">
-<meta property="og:url" content="https://hanq.github.io/2019/08/03/记一次歪打正着的破解WIFI密码/index.html">
+<meta property="og:url" content="https://hanq.github.io/2019/08/03/2019-8-3/index.html">
 <meta property="og:site_name" content="Han&#39;s Blog">
-<meta property="og:description" content="背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。结果发现登不上？？？不行 我的路由器我做主网上找了半天的同型号路由器密码发现不同地区的密码不一样 不过还是找到了正确的密码登陆上来了这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？附近有好几个运营商常见前">
+<meta property="og:description" content="背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。 结果发现登不上？？？ 不行 我的路由器我做主 网上找了半天的同型号路由器密码 发现不同地区的密码不一样 不过还是找到了正确的密码 登陆上来了 这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？ 附近有好几">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s1.51cto.com/images/blog/201907/31/3235e6793089b722276cadf3c0496b7f.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
 <meta property="og:image" content="https://s1.51cto.com/images/blog/201907/31/813341677f603a6f922b2d37aca84874.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
@@ -98,10 +98,10 @@
 <meta property="og:image" content="https://s1.51cto.com/images/blog/201907/31/ba0e596c4ec7f1aa048c5477e85697a0.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
 <meta property="og:image" content="https://s1.51cto.com/images/blog/201907/31/aa07785c7c06b00ce99f0710e850e3f6.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
 <meta property="og:image" content="https://s1.51cto.com/images/blog/201907/31/aa3f43e59565ddb0e5e2600eda3329fe.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
-<meta property="og:updated_time" content="2019-08-03T04:32:36.933Z">
+<meta property="og:updated_time" content="2019-08-03T04:44:36.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次歪打正着的破解WIFI密码">
-<meta name="twitter:description" content="背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。结果发现登不上？？？不行 我的路由器我做主网上找了半天的同型号路由器密码发现不同地区的密码不一样 不过还是找到了正确的密码登陆上来了这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？附近有好几个运营商常见前">
+<meta name="twitter:description" content="背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。 结果发现登不上？？？ 不行 我的路由器我做主 网上找了半天的同型号路由器密码 发现不同地区的密码不一样 不过还是找到了正确的密码 登陆上来了 这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？ 附近有好几">
 <meta name="twitter:image" content="https://s1.51cto.com/images/blog/201907/31/3235e6793089b722276cadf3c0496b7f.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="https://hanq.github.io/2019/08/03/记一次歪打正着的破解WIFI密码/"/>
+  <link rel="canonical" href="https://hanq.github.io/2019/08/03/2019-8-3/"/>
 
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hanq.github.io/2019/08/03/记一次歪打正着的破解WIFI密码/">
+    <link itemprop="mainEntityOfPage" href="https://hanq.github.io/2019/08/03/2019-8-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Han">
@@ -334,7 +334,7 @@
 
           
           
-             <span id="/2019/08/03/记一次歪打正着的破解WIFI密码/" class="leancloud_visitors" data-flag-title="记一次歪打正着的破解WIFI密码">
+             <span id="/2019/08/03/2019-8-3/" class="leancloud_visitors" data-flag-title="记一次歪打正着的破解WIFI密码">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -399,7 +399,17 @@
       
 
       
-        <p>背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。<br><img src="https://s1.51cto.com/images/blog/201907/31/3235e6793089b722276cadf3c0496b7f.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>结果发现登不上？？？<br><img src="https://s1.51cto.com/images/blog/201907/31/813341677f603a6f922b2d37aca84874.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>不行 我的路由器我做主<br><img src="https://s1.51cto.com/images/blog/201907/31/4928a50ba54c1cfe31215afafd5f35cf.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>网上找了半天的同型号路由器密码<br><img src="https://s1.51cto.com/images/blog/201907/31/7eca832cd8d25f5b579592f883ea4239.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>发现不同地区的密码不一样 不过还是找到了正确的密码<br><img src="https://s1.51cto.com/images/blog/201907/31/62c38c103e5987b20e88a6624603246e.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>登陆上来了<br><img src="https://s1.51cto.com/images/blog/201907/31/07c26c4e3157e39e0d889604de4159df.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？<br><img src="https://s1.51cto.com/images/blog/201907/31/988bcba89ee97ad75cc823417ebb7887.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>附近有好几个运营商常见前缀的路由器，试一下看能不能连上。输入PIN码，不自动选择网络。（需要无线网卡）<br><img src="https://s1.51cto.com/images/blog/201907/31/ba0e596c4ec7f1aa048c5477e85697a0.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>选择这个和我家相同前缀的Wifi<br><img src="https://s1.51cto.com/images/blog/201907/31/aa07785c7c06b00ce99f0710e850e3f6.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>就连接成功了<br><img src="https://s1.51cto.com/images/blog/201907/31/aa3f43e59565ddb0e5e2600eda3329fe.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""><br>连上WIFI老老实实蹭个网，就不要做坏事了哦~<br>PS：经测试附近两个运营商路由器品牌的五台路由器都可用此方法连上WIFI。所以WPS功能还是最好关掉，虽然现在的路由器已经有了防PIN机制，但还是有被蹭网风险的。</p>
+        <p>背景：家里最近装了移动的宽带，送的是光纤调制解调器+无线路由器的那种，但信号不好。就想进管理页面看一眼。结果发现常见默认密码登不进，看了下路由器上贴的标签，得到管理密码。<br><img src="https://s1.51cto.com/images/blog/201907/31/3235e6793089b722276cadf3c0496b7f.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>结果发现登不上？？？<br><img src="https://s1.51cto.com/images/blog/201907/31/813341677f603a6f922b2d37aca84874.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>不行 我的路由器我做主<br><img src="https://s1.51cto.com/images/blog/201907/31/4928a50ba54c1cfe31215afafd5f35cf.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>网上找了半天的同型号路由器密码<br><img src="https://s1.51cto.com/images/blog/201907/31/7eca832cd8d25f5b579592f883ea4239.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>发现不同地区的密码不一样 不过还是找到了正确的密码<br><img src="https://s1.51cto.com/images/blog/201907/31/62c38c103e5987b20e88a6624603246e.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>登陆上来了<br><img src="https://s1.51cto.com/images/blog/201907/31/07c26c4e3157e39e0d889604de4159df.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>这种宽带运营商送的路由器一般都开了WPS，移动路由器PIN码居然这么简单？<br><img src="https://s1.51cto.com/images/blog/201907/31/988bcba89ee97ad75cc823417ebb7887.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>附近有好几个运营商常见前缀的路由器，试一下看能不能连上。输入PIN码，不自动选择网络。（需要无线网卡）<br><img src="https://s1.51cto.com/images/blog/201907/31/ba0e596c4ec7f1aa048c5477e85697a0.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>选择这个和我家相同前缀的Wifi<br><img src="https://s1.51cto.com/images/blog/201907/31/aa07785c7c06b00ce99f0710e850e3f6.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>就连接成功了<br><img src="https://s1.51cto.com/images/blog/201907/31/aa3f43e59565ddb0e5e2600eda3329fe.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<p>连上WIFI老老实实蹭个网，就不要做坏事了哦~<br>PS：经测试附近两个运营商路由器品牌的五台路由器都可用此方法连上WIFI。所以WPS功能还是最好关掉，虽然现在的路由器已经有了防PIN机制，但还是有被蹭网风险的。</p>
 
       
     </div>
